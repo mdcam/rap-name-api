@@ -48,7 +48,10 @@ app.get('/api/:name', (request, response) => {
 })
 
 //Step 3: You need to tell the server to listen now!
-app.listen(PORT, () => {
+//          The "process.env.PORT" says use whatever port
+//          the host site (Heroku in this case) wants to use 
+//          OR use our hardcoded port (which is 8000 here)
+app.listen(process.env.PORT || PORT, () => {
     console.log(`The server is now running on port ${PORT}! Betta Go Catch It!`)
 })
 
